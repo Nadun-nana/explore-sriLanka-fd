@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import CreatePost from './pages/createpost';
+import CreatePost from './pages/CreatePost';
 import PostDetails from './pages/PostDetails';
 import EditPost from './pages/EditPost';
 
