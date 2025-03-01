@@ -21,7 +21,7 @@ export default function CreatePost() {
       formData.append('images', images[i]);
     }
 
-    await axios.post('http://localhost:5000/posts', formData, {
+    await axios.post('http://3.99.214.31:5000/posts', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },

@@ -10,7 +10,7 @@ export default function EditPost() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/posts/${id}`).then((response) => {
+    axios.get(`http://3.99.214.31:5000/posts/${id}`).then((response) => {
       setTitle(response.data.title);
       setBody(response.data.body);
     });
@@ -29,7 +29,7 @@ export default function EditPost() {
       formData.append('images', images[i]);
     }
 
-    await axios.put(`http://localhost:5000/posts/${id}`, formData, {
+    await axios.put(`http://3.99.214.31:5000/posts/${id}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
