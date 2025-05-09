@@ -1,11 +1,204 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Explore Sri Lanka - Discover Paradise">
+    <main>
+        <!-- Hero Section -->
+        <div class="relative h-[80vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1588416499018-d8c621e7d2c2?q=80&w=1470&auto=format&fit=crop')">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 text-center">Explore Sri Lanka</h1>
+                <p class="text-xl md:text-2xl max-w-2xl text-center mb-8">Discover the beauty of the pearl of the Indian Ocean</p>
+                <a href="/destinations" class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all">
+                    Discover Destinations
+                </a>
+            </div>
+        </div>
+
+        <!-- Featured Destinations -->
+        <section class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12">Popular Destinations</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Destination 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                        <div class="h-56 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1586211082529-c2a98d21a718" 
+                                alt="Sigiriya Rock" 
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Sigiriya Rock Fortress</h3>
+                            <p class="text-gray-600 mb-4">Explore the ancient rock fortress with stunning panoramic views of the surrounding landscape.</p>
+                            <a href="/destinations/sigiriya" class="text-emerald-500 font-medium hover:underline">Learn more</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Destination 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                        <div class="h-56 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1575986767340-5d17ae0de1d9" 
+                                alt="Ella" 
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Ella</h3>
+                            <p class="text-gray-600 mb-4">Experience the breathtaking mountain views, tea plantations, and the famous Nine Arch Bridge.</p>
+                            <a href="/destinations/ella" class="text-emerald-500 font-medium hover:underline">Learn more</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Destination 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                        <div class="h-56 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a" 
+                                alt="Galle Fort" 
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Galle Fort</h3>
+                            <p class="text-gray-600 mb-4">Wander through the historic Dutch colonial fort with its charming streets and ocean views.</p>
+                            <a href="/destinations/galle" class="text-emerald-500 font-medium hover:underline">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Sri Lanka -->
+        <section class="py-16 px-4 bg-gradient-to-r from-emerald-50 to-teal-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Why Visit Sri Lanka?</h2>
+                        <p class="text-gray-700 mb-4">Sri Lanka offers a perfect blend of natural beauty, rich culture, and warm hospitality. From pristine beaches to misty mountains, ancient ruins to wildlife safaris, this island nation has something for every traveler.</p>
+                        <p class="text-gray-700 mb-6">Experience the diverse landscapes, delicious cuisine, and the genuine warmth of Sri Lankan people that will make your journey unforgettable.</p>
+                        <a href="/about" class="inline-block bg-emerald-500 text-white px-6 py-3 rounded-lg hover:bg-emerald-600 transition-colors">Learn More About Sri Lanka</a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1546708973-b339540b5162" alt="Sri Lanka Beach" class="rounded-lg h-48 w-full object-cover" />
+                        <img src="https://images.unsplash.com/photo-1590123715937-e3a7fb4d6aeb" alt="Sri Lanka Temple" class="rounded-lg h-48 w-full object-cover" />
+                        <img src="https://images.unsplash.com/photo-1470093851219-69951fcbb533" alt="Sri Lanka Tea Plantation" class="rounded-lg h-48 w-full object-cover" />
+                        <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3" alt="Sri Lanka Wildlife" class="rounded-lg h-48 w-full object-cover" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel Tips -->
+        <section class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12">Travel Tips</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Best Time to Visit</h3>
+                        <p class="text-gray-600">December to March is ideal for the west and south coasts, while May to September is best for the east coast. The central highlands are pleasant year-round.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Currency</h3>
+                        <p class="text-gray-600">The Sri Lankan Rupee (LKR) is the local currency. ATMs are widely available in cities and tourist areas. Credit cards are accepted at most hotels and restaurants.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Local Customs</h3>
+                        <p class="text-gray-600">Remove shoes and cover shoulders when entering temples. Use your right hand for giving and receiving. Respect religious sites and dress modestly in public places.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="py-16 px-4 bg-emerald-600 text-white">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+                <p class="mb-8">Get the latest travel tips, destination guides, and exclusive offers delivered to your inbox.</p>
+                <form class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <input 
+                        type="email" 
+                        placeholder="Your email address" 
+                        class="px-4 py-3 rounded-lg text-gray-800 w-full sm:w-auto flex-grow max-w-md"
+                    />
+                    <button type="submit" class="bg-white text-emerald-600 font-medium px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Explore Sri Lanka</h3>
+                    <p class="text-gray-300">Your ultimate guide to discovering the beauty and wonders of Sri Lanka.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Destinations</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/destinations/sigiriya" class="hover:text-white">Sigiriya</a></li>
+                        <li><a href="/destinations/kandy" class="hover:text-white">Kandy</a></li>
+                        <li><a href="/destinations/galle" class="hover:text-white">Galle</a></li>
+                        <li><a href="/destinations/ella" class="hover:text-white">Ella</a></li>
+                        <li><a href="/destinations/mirissa" class="hover:text-white">Mirissa</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/about" class="hover:text-white">About Us</a></li>
+                        <li><a href="/blog" class="hover:text-white">Travel Blog</a></li>
+                        <li><a href="/gallery" class="hover:text-white">Photo Gallery</a></li>
+                        <li><a href="/contact" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <p class="text-gray-300">Email: info@exploresrilanka.com</p>
+                    <p class="text-gray-300">Phone: +94 11 234 5678</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-.104.046-.395.06-3.808.06-2.43 0-2.784-.013-3.808-.06a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.067-.06-1.407-.06-4.123v-.08c0-2.643.012-2.987.06-4.043.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465.104-.046.395-.06 3.808-.06 2.43 0 2.784.013 3.808.06z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </Layout>
+
