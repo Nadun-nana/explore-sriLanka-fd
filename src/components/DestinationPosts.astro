@@ -1,0 +1,173 @@
+---
+// This is a placeholder for fetching posts from an API
+// In a real application, you would fetch posts from your backend
+const posts = [
+  {
+    id: 'post1',
+    title: 'Beautiful Beaches of Mirissa',
+    body: 'Explore the stunning beaches of Mirissa with crystal clear waters and golden sands. Perfect for surfing and whale watching.',
+    location: 'Southern Province',
+    images: ['https://media.istockphoto.com/id/2162681925/photo/woman-looking-at-ocean-standing-among-palm-trees-grove.webp?a=1&b=1&s=612x612&w=0&k=20&c=55maJl38hEW4WDF4hDWOeapmrZa1UxlmpqxtzCxFeHg'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'post2',
+    title: 'Exploring Sigiriya Rock Fortress',
+    body: 'My journey to the ancient rock fortress of Sigiriya, one of Sri Lanka\'s most remarkable archaeological sites with stunning views.',
+    location: 'Central Province',
+    images: ['https://images.unsplash.com/photo-1586211082529-c2a98d21a718?q=80&w=1470&auto=format&fit=crop'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'post3',
+    title: 'Tea Plantations of Nuwara Eliya',
+    body: 'Wandering through the lush green tea plantations of Nuwara Eliya, experiencing the cool climate and beautiful landscapes.',
+    location: 'Central Province',
+    images: ['https://media.istockphoto.com/id/579253918/photo/female-worker-in-tea-plantations-of-sri-lanka.webp?a=1&b=1&s=612x612&w=0&k=20&c=omMpSfOMS39pJwyt6uU7xZIwCw54P5LGOTQtAXu1jxo='],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'post4',
+    title: 'Ancient City of Polonnaruwa',
+    body: 'Exploring the ancient city of Polonnaruwa with its impressive ruins and historical significance. A UNESCO World Heritage site not to be missed.',
+    location: 'North Central Province',
+    images: ['https://images.unsplash.com/photo-1590123715937-e3a7fb4d6aeb?q=80&w=1470&auto=format&fit=crop'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'post5',
+    title: 'Galle Fort: A Colonial Gem',
+    body: 'Walking through the historic Galle Fort with its charming streets, colonial architecture, and beautiful ocean views.',
+    location: 'Southern Province',
+    images: ['https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=1470&auto=format&fit=crop'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'post6',
+    title: 'Wildlife Safari in Yala National Park',
+    body: 'An incredible safari experience in Yala National Park, spotting leopards, elephants, and many other wild animals in their natural habitat.',
+    location: 'Southern Province',
+    images: ['https://images.unsplash.com/photo-1581335438722-9aa7f6ae3d5d?q=80&w=1470&auto=format&fit=crop'],
+    createdAt: new Date().toISOString()
+  }
+];
+---
+
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Destination Posts</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Discover beautiful destinations in Sri Lanka shared by travelers
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {posts.map((post) => (
+        <a href={`/destinations/${post.id}`} class="group block">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full flex flex-col transform hover:-translate-y-2">
+            <div class="h-64 overflow-hidden relative">
+              {post.images && post.images.length > 0 ? (
+                <img
+                  src={post.images[0]}
+                  alt={post.title}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              ) : (
+                <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                  <svg
+                    class="w-16 h-16 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+              )}
+
+              {/* Overlay gradient */}
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              {/* Location tag */}
+              {post.location && (
+                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-emerald-600 px-3 py-1 rounded-full text-sm font-medium">
+                  {post.location}
+                </div>
+              )}
+            </div>
+
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-emerald-600 transition-colors">
+                {post.title}
+              </h3>
+
+              <p class="text-gray-600 mb-4 line-clamp-2 flex-grow">
+                {post.body}
+              </p>
+
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-emerald-600 font-medium group-hover:text-emerald-700 transition-colors flex items-center">
+                  Explore
+                  <svg
+                    class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </span>
+
+                {post.createdAt && (
+                  <span class="text-sm text-gray-500">
+                    {new Date(post.createdAt).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="/destinations"
+        class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-full font-medium transition-colors"
+      >
+        View All Destinations
+        <svg
+          class="w-5 h-5 ml-2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

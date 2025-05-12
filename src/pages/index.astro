@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import DestinationPosts from '../components/DestinationPosts.astro';
 ---
 
 <Layout title="Explore Sri Lanka - Discover Paradise">
@@ -16,62 +17,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </div>
 
-        <!-- Featured Destinations -->
-        <section class="py-16 px-4">
-            <div class="max-w-7xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-12">Popular Destinations</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Destination 1 -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="h-56 overflow-hidden">
-                            <img 
-                                src="https://images.unsplash.com/photo-1586211082529-c2a98d21a718" 
-                                alt="Sigiriya Rock" 
-                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                            />
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Sigiriya Rock Fortress</h3>
-                            <p class="text-gray-600 mb-4">Explore the ancient rock fortress with stunning panoramic views of the surrounding landscape.</p>
-                            <a href="/destinations/sigiriya" class="text-emerald-500 font-medium hover:underline">Learn more</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Destination 2 -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="h-56 overflow-hidden">
-                            <img 
-                                src="https://images.unsplash.com/photo-1575986767340-5d17ae0de1d9" 
-                                alt="Ella" 
-                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                            />
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Ella</h3>
-                            <p class="text-gray-600 mb-4">Experience the breathtaking mountain views, tea plantations, and the famous Nine Arch Bridge.</p>
-                            <a href="/destinations/ella" class="text-emerald-500 font-medium hover:underline">Learn more</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Destination 3 -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="h-56 overflow-hidden">
-                            <img 
-                                src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a" 
-                                alt="Galle Fort" 
-                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                            />
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Galle Fort</h3>
-                            <p class="text-gray-600 mb-4">Wander through the historic Dutch colonial fort with its charming streets and ocean views.</p>
-                            <a href="/destinations/galle" class="text-emerald-500 font-medium hover:underline">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- About Sri Lanka -->
         <section class="py-16 px-4 bg-gradient-to-r from-emerald-50 to-teal-50">
@@ -97,7 +43,7 @@ import Layout from '../layouts/Layout.astro';
         <section class="py-16 px-4">
             <div class="max-w-7xl mx-auto">
                 <h2 class="text-3xl font-bold text-center mb-12">Travel Tips</h2>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white p-6 rounded-xl shadow-md">
                         <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
@@ -108,7 +54,7 @@ import Layout from '../layouts/Layout.astro';
                         <h3 class="text-xl font-bold mb-2">Best Time to Visit</h3>
                         <p class="text-gray-600">December to March is ideal for the west and south coasts, while May to September is best for the east coast. The central highlands are pleasant year-round.</p>
                     </div>
-                    
+
                     <div class="bg-white p-6 rounded-xl shadow-md">
                         <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -118,7 +64,7 @@ import Layout from '../layouts/Layout.astro';
                         <h3 class="text-xl font-bold mb-2">Currency</h3>
                         <p class="text-gray-600">The Sri Lankan Rupee (LKR) is the local currency. ATMs are widely available in cities and tourist areas. Credit cards are accepted at most hotels and restaurants.</p>
                     </div>
-                    
+
                     <div class="bg-white p-6 rounded-xl shadow-md">
                         <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -138,9 +84,9 @@ import Layout from '../layouts/Layout.astro';
                 <h2 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
                 <p class="mb-8">Get the latest travel tips, destination guides, and exclusive offers delivered to your inbox.</p>
                 <form class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <input 
-                        type="email" 
-                        placeholder="Your email address" 
+                    <input
+                        type="email"
+                        placeholder="Your email address"
                         class="px-4 py-3 rounded-lg text-gray-800 w-full sm:w-auto flex-grow max-w-md"
                     />
                     <button type="submit" class="bg-white text-emerald-600 font-medium px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
@@ -149,6 +95,9 @@ import Layout from '../layouts/Layout.astro';
                 </form>
             </div>
         </section>
+
+        <!-- Destination Posts -->
+        <DestinationPosts />
     </main>
 
     <!-- Footer -->
